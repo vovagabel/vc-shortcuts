@@ -1,6 +1,6 @@
 # Custom Shortcodes for Visual Composer
 
-### Button
+#### Button
 ```
 array(
   'type' => 'vc_link',

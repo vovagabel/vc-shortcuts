@@ -1,6 +1,6 @@
 # Custom Shortcodes for Visual Composer
 
-#### Стартовый шорткат
+### Стартовый шорткат
 
 ```
 // Shortcode
@@ -13,16 +13,25 @@ function vc_button_shortcode( $atts ) {
 
 
 }
-
 ```
 // Action
+
 add_action( 'vc_before_init', 'vc_NAME_action' );
 
+function vc_NAME_action() {
+  vc_map( array(
+    'name' => __( 'Button', 'js_composer' ),
+    'base' => 'vc_button',
+		'description' => 'Eye catching button',
+    'category' => __( 'Custom', 'js_composer' ),
+    'icon' => get_template_directory_uri() . '/vc_templates/vc-element-icons/element-icon-button.svg',
+    'params' => array(
 
+    
 ```
 
 ```
-#### Textfield
+### Textfield
 ```
 array(
   'type' => 'textfield',
@@ -31,7 +40,7 @@ array(
   'description' => __( '', 'js_composer' ),
 ),
 ```
-#### Button 
+### Button 
 ##### Описание
 ```
 array(
@@ -42,7 +51,7 @@ array(
 ),
 ```
 
-#### Dropdown
+### Dropdown
 ##### Описание
 ```
 array(
@@ -57,8 +66,8 @@ array(
 ),
 ```
 
-#### Add param 
-`'admin_label' => true,`
+### Add param 
+```'admin_label' => true,```
 
 #### Зависимость от выбираемого значение одного из полей, например dropdown
 ```

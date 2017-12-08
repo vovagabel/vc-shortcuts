@@ -9,11 +9,12 @@ array(
   'description' => __( '', 'js_composer' ),
 ),
 ```
-#### Button
+#### Button 
+##### Описание
 ```
 array(
   'type' => 'vc_link',
-  'heading' => 'Button',
+  'heading' => __( 'Button', 'js_composer' ),
   'param_name' => 'button',
   'description' => __( '', 'js_composer' ),
 ),

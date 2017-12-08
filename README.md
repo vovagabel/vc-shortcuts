@@ -1,7 +1,19 @@
 # WPB Custom Shortcodes
 
+Написать базовые шорткоды:
+Раздел,
+Строка,
+Текстовый блок,
+Заголовок,
+Изображение,
+Кнопка
+
+Нарисовать базовые иконки:
+
 ### Стартовый шорткат
 ```
+<?php
+
 // Shortcode
 add_shortcode( 'vc_NAME', 'vc_NAME_shortcode' );
 
@@ -10,11 +22,9 @@ function vc_NAME_shortcode( $atts ) {
     'PARAM_NAME' => 'DEFAULT VALUE',
   ), $atts ) );
 
-
+  return "";
 }
-```
 
-```
 // Action
 add_action( 'vc_before_init', 'vc_NAME_action' );
 
@@ -26,10 +36,12 @@ function vc_NAME_action() {
     'category' => __( 'CATEGORY_NAME', 'js_composer' ),
     'icon' => get_template_directory_uri() . '/vc_templates/vc-element-icons/element-icon-_NAME.svg',
     'params' => array(
-
+    
     )
   ) );
 }
+
+?>
 ```
 
 ### Textfield
@@ -79,4 +91,14 @@ array(
   'element' => 'param_name', // param_name
   'value' => 'value_1',
 ),
+```
+
+```
+Добавление новых шорткодов в файле function.php
+
+/*------------------------------------------------------------------*
+ * Add VC Elements Custom
+/*------------------------------------------------------------------*/
+
+get_template_part( 'vc_templates/vc_NAME' );
 ```

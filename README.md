@@ -1,12 +1,11 @@
-# Custom Shortcodes for Visual Composer
+# WPB Custom Shortcodes
 
 ### Стартовый шорткат
-
 ```
 // Shortcode
 add_shortcode( 'vc_NAME', 'vc_NAME_shortcode' );
 
-function vc_button_shortcode( $atts ) {
+function vc_NAME_shortcode( $atts ) {
   extract( shortcode_atts( array(
     'PARAM_NAME' => 'DEFAULT VALUE',
   ), $atts ) );
@@ -14,23 +13,25 @@ function vc_button_shortcode( $atts ) {
 
 }
 ```
-// Action
 
+```
+// Action
 add_action( 'vc_before_init', 'vc_NAME_action' );
 
 function vc_NAME_action() {
   vc_map( array(
-    'name' => __( 'Button', 'js_composer' ),
-    'base' => 'vc_button',
-		'description' => 'Eye catching button',
-    'category' => __( 'Custom', 'js_composer' ),
-    'icon' => get_template_directory_uri() . '/vc_templates/vc-element-icons/element-icon-button.svg',
+    'name' => __( 'NAME', 'js_composer' ),
+    'base' => 'vc_NAME',
+    'description' => '',
+    'category' => __( 'CATEGORY_NAME', 'js_composer' ),
+    'icon' => get_template_directory_uri() . '/vc_templates/vc-element-icons/element-icon-_NAME.svg',
     'params' => array(
 
-    
+    )
+  ) );
+}
 ```
 
-```
 ### Textfield
 ```
 array(
@@ -40,8 +41,9 @@ array(
   'description' => __( '', 'js_composer' ),
 ),
 ```
+
 ### Button 
-##### Описание
+Описание
 ```
 array(
   'type' => 'vc_link',
@@ -52,7 +54,7 @@ array(
 ```
 
 ### Dropdown
-##### Описание
+Описание
 ```
 array(
   'type' => 'dropdown',
@@ -67,7 +69,9 @@ array(
 ```
 
 ### Add param 
-```'admin_label' => true,```
+```
+'admin_label' => true,
+```
 
 #### Зависимость от выбираемого значение одного из полей, например dropdown
 ```
